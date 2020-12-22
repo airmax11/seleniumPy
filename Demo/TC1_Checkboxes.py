@@ -7,4 +7,16 @@ driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 time.sleep(2)
 
 
-driver.find_elements_by_css_selector("input[type='checkbox']").click()
+lst = driver.find_elements_by_css_selector("input[type='checkbox']")
+lst2 = driver.find_element_by_css_selector("input[type='checkbox']")
+print(len(lst))
+
+
+for i in lst:
+    i.click()
+    print(i.is_selected())
+    assert i.is_selected()
+
+time.sleep(2)
+
+driver.close()
