@@ -3,7 +3,6 @@ import time
 
 driver = webdriver.Chrome(executable_path="c:/webdirver/chromedriver.exe")
 
-
 driver.get("https://www.amazon.de/")
 time.sleep(2)
 driver.maximize_window()
@@ -15,7 +14,7 @@ print(driver.title)
 print(driver.current_url)
 test = driver.find_elements_by_xpath("//*[starts-with(text(),'Dieses')]")
 print(test[0].text)
-driver.find_element_by_xpath("//span[@class='a-size-base' and contains(text(), '32 GB WLAN + Gratis 4G')]").click()
-print(driver.find_element_by_xpath("//span[@class='selection' and contains(text(), '32 GB WLAN + Gratis 4G')]").text)
+driver.find_element_by_xpath("//span[@class='a-size-base' and contains(text(), '32 GB WLAN + gratis Mobilfunkverbindung')]").click()
+print(driver.find_element_by_xpath("//span[@class='selection' and contains(text(), '32 GB WLAN + gratis Mobilfunkverbindung')]").text)
 
 driver.close()
