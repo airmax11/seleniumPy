@@ -18,9 +18,6 @@ def wair_for_severasl_elements(counter, xpath):
             raise RuntimeError
         continue
 
-
-
-
 driver = webdriver.Chrome(executable_path="c:/webdirver/chromedriver.exe")
 # driver.implicitly_wait(5)
 wait = WebDriverWait(driver, 10)
