@@ -5,7 +5,10 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from time import sleep
 
+
 driver = webdriver.Chrome(executable_path="c:/webdirver/chromedriver.exe")
+# driver.set_window_size("1920", "1080")
+driver.maximize_window()
 wait = WebDriverWait(driver, 10)
 action = ActionChains(driver)
 
