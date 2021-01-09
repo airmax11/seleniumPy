@@ -23,3 +23,16 @@ def mouse_click_on_element(element):
 
 def double_click_on_element(element):
     action.double_click(driver.find_element_by_css_selector(element)).perform()
+
+def wair_for_several_elements(counter, xpath):
+    cnt = 0
+    while True:
+        lst = wait.until(EC.visibility_of_all_elements_located((By.XPATH, xpath)))
+        if len(lst) >= counter:
+            break
+
+        if cnt == 5:
+            driver.close()
+            raise RuntimeError
+        cnt += 1
+        continue
