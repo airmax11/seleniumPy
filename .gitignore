@@ -6,3 +6,7 @@ qwerty.txt
 /Demo/debug.log
 Demo/imp/__pycache__/
 /Demo/picture/*
+report.html
+Demo/pytest_d/.pytest_cache
+Demo/pytest_d/__pycache__/
+test_run.log
