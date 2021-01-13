@@ -6,16 +6,31 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 PATH = "https://rahulshettyacademy.com/angularpractice/"
 
+def pytest_addoption(parser):
+    parser.addoption("-B", "--browser",
+                     action="store",
+                     default="chrome",
+                     help="Browser. Valid options are firefox, ie and chrome")
+
 
 @pytest.fixture(scope="class")
 def setup(request):
-    chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument("--window-size=1920x1080")
-    # chrome_options.add_argument('--ignore-certificate-errors')
-    # chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(executable_path="c:/webdirver/chromedriver.exe", options=chrome_options)
-    # driver.set_window_size("1920", "1080")
-    driver.maximize_window()
+    browser_name = request.config.getoption("browser")
+    if browser_name == "chrome":
+        chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument("--window-size=1920x1080")
+        # chrome_options.add_argument('--ignore-certificate-errors')
+        # chrome_options.add_argument('--headless')
+        driver = webdriver.Chrome(executable_path="c:/webdirver/chromedriver.exe", options=chrome_options)
+        # driver.set_window_size("1920", "1080")
+        driver.maximize_window()
+    elif browser_name == "firefox":
+        driver = webdriver.Firefox(executable_path="c:/webdirver/geckodriver.exe")
+        # firefox option
+    elif browser_name == "IE":
+        pass
+        # IE option
+
     driver.get(PATH)
     wait = WebDriverWait(driver, 10)
     action = ActionChains(driver)
@@ -24,16 +39,3 @@ def setup(request):
     request.cls.driver = driver
     yield
     driver.close()
-
-
-
-
-@pytest.fixture(scope="class")
-def dataload():
-    print("Test Case started")
-    return "BLABLABLA"
-
-
-@pytest.fixture(params=[("Chrome", "AirMax"), ("mozilla", "Test"), ("IE", "New")])
-def sentparameters(request):
-    return request.param

@@ -4,12 +4,15 @@ from selenium.webdriver.common.by import By
 import pytest
 # from Demo.imp import prec as dr
 from Demo.utilities.BaseClass import Baseclass
+from Demo.pageobject.HomePage import HomePageObject
 
 
-class Testset_01(Baseclass):
+
+class Testsuit_01(Baseclass):
 
     def test_e2e(self):
-        self.driver.find_element_by_link_text("Shop").click()
+        homepage = HomePageObject(self.driver)
+        homepage.shop_button_click()
         prod = "//div[@class='card h-100']/div"
         products = self.driver.find_elements_by_xpath(f"{prod}/h4")
         # self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

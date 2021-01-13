@@ -12,3 +12,4 @@ Demo/pytest_d/__pycache__/
 test_run.log
 Demo/__pycache__/
 assets
+Demo/pageobject/__pycache__/
