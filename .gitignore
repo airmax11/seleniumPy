@@ -4,9 +4,11 @@ notes.txt
 test3.txt
 qwerty.txt
 /Demo/debug.log
-Demo/imp/__pycache__/
+Demo/utilities/__pycache__/
 /Demo/picture/*
 report.html
 Demo/pytest_d/.pytest_cache
 Demo/pytest_d/__pycache__/
 test_run.log
+Demo/__pycache__/
+assets

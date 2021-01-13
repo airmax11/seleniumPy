@@ -1,4 +1,4 @@
-from Demo.imp import prec as dr
+from Demo.utilities import prec as dr
 PATH = "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver"
 
 dr.navi(PATH)

@@ -12,7 +12,7 @@ driver.maximize_window()
 wait = WebDriverWait(driver, 10)
 action = ActionChains(driver)
 
-def navi(path):
+def navi(driver, path):
     driver.get(path)
 
 def move_mouse_to_element(element):

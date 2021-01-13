@@ -1,4 +1,4 @@
-from Demo.imp import prec as dr
+from Demo.utilities import prec as dr
 PATH = "https://rahulshettyacademy.com/angularpractice/"
 dr.driver.set_window_size("800", "600")
 

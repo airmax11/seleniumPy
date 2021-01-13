@@ -1,5 +1,5 @@
 import pytest
-from Demo.imp.BaseClass import Baseclass
+from Demo.utilities.BaseClass import Baseclass
 
 @pytest.mark.usefixtures("setup", "dataload")
 class TestSuit(Baseclass):
