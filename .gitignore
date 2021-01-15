@@ -13,3 +13,5 @@ test_run.log
 Demo/__pycache__/
 assets
 Demo/pageobject/__pycache__/
+debug.log
+Demo/reports/*
