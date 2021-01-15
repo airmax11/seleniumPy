@@ -25,10 +25,6 @@ class CheckOutPageObject:
     def send_keys_to_country(self, keys):
         self.driver.find_element(*CheckOutPageObject.country_field).send_keys(keys)
 
-    def wait_for_element(self, key):
-        self.wait.until(EC.presence_of_element_located((By.LINK_TEXT, key)))
-        self.driver.find_element_by_link_text(key).click()
-
     def checkbox_purchase(self):
         self.driver.find_element(*CheckOutPageObject.check_box_primary).click()
         self.driver.find_element(*CheckOutPageObject.purchase_button).click()
