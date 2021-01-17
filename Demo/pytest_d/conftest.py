@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+from pyvirtualdisplay import Display
 
 PATH = "https://rahulshettyacademy.com/angularpractice/"
 
@@ -27,6 +28,17 @@ def setup(request):
         # chrome_options.add_argument('--ignore-certificate-errors')
         # chrome_options.add_argument('--headless')
         driver = webdriver.Chrome(executable_path="c:/webdirver/chromedriver.exe", options=chrome_options)
+        # driver.set_window_size("1920", "1080")
+        driver.maximize_window()
+    elif browser_name == "chromium":
+        display = Display(visible=0, size=(1920, 1080))
+        display.start()
+        driver = webdriver.Chrome('/usr/bin/chromedriver')
+        chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument("--window-size=1920x1080")
+        # chrome_options.add_argument('--ignore-certificate-errors')
+        # chrome_options.add_argument('--headless')
+        driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver", options=chrome_options)
         # driver.set_window_size("1920", "1080")
         driver.maximize_window()
     elif browser_name == "firefox":
