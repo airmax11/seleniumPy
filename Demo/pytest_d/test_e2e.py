@@ -24,7 +24,7 @@ class Testsuit_01(Baseclass):
         checkout.checkbox_purchase()
 
         txt = self.driver.find_element_by_css_selector("div[class='alert alert-success alert-dismissible']").text
-        assert "Success! Thankk you!" in txt
+        assert "Success! Thank you!" in txt
 
         now_time = time.strftime('%Y-%m-%d %H-%M-%S')
         print(now_time)
