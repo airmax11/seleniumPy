@@ -6,6 +6,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from pyvirtualdisplay import Display
 
+
 PATH = "https://rahulshettyacademy.com/angularpractice/"
 
 driver = None
