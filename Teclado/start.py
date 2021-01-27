@@ -1,34 +1,24 @@
-class Store:
-    def __init__(self, name):
+class Bookshelf:
+    def __init__(self, *books):
+        self.books = books
+
+    def __str__(self):
+        return f"There are {len(self.books)} books."
+
+
+class Book:
+    def __init__(self, name, amount):
         self.name = name
-        self.items = []
+        self.amount = amount
 
-    def add_item(self, name, price):
-        self.items.append({
-            'name': name,
-            'price': price
-        })
+    def __str__(self):
+        return f"Book name is {self.name} and amount is {self.amount}"
 
-    def stock_price(self):
-        total = 0
-        for item in self.items:
-            total += item['price']
-        return total
 
-    @classmethod
-    def franchise(cls, store):
-        # Return another store, with the same name as the argument's name, plus " - franchise"
-        return cls(store.name + " - franchise")
-
-    @staticmethod
-    def store_details(store):
-        # Return a string representing the argument
-        # It should be in the format 'NAME, total stock price: TOTAL'
-        return '{}, total stock price: {}'.format(store.name, int(store.stock_price()))
-
-test = Store("APPLE")
-test.add_item("Keyboard", 820)
-test2 = Store.franchise(test)
-print(test2.name)
-print(Store.store_details(test))
-
+book1 = Book("Harry", 100)
+book2 = Book("Germiona", 20)
+print(book1)
+print(book2)
+bookshell = Bookshelf(book1, book2)
+print(bookshell.books)
+print(bookshell)
